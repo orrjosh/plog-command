@@ -1,0 +1,19 @@
+{
+  "name": "plog-command",
+  "version": "1.0.0",
+  "description": "command for adding quick entries to personal log",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/orrjosh/plog-command.git"
+  },
+  "author": "orrjosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orrjosh/plog-command/issues"
+  },
+  "homepage": "https://github.com/orrjosh/plog-command#readme"
+}
