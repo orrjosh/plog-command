@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/orrjosh/plog-command/issues"
   },
-  "homepage": "https://github.com/orrjosh/plog-command#readme"
+  "homepage": "https://github.com/orrjosh/plog-command#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
 }
