@@ -12,6 +12,9 @@
   },
   "author": "orrjosh",
   "license": "ISC",
+  "bin": {
+    "plog": "index.js"
+  },
   "bugs": {
     "url": "https://github.com/orrjosh/plog-command/issues"
   },
