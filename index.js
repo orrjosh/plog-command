@@ -16,11 +16,11 @@ cli
   })
   .parse(process.argv)
 
-function add(message, time){
-  if(!time){
-    time = moment(new Date()).format('HHmm')
+function add(message, timestamp){
+  if(!timestamp){
+    timestamp = moment(new Date()).format('HHmm')
   }
-  console.log('message:', message, " time:", time)
+  console.log('message:', message, " timestamp:", timestamp)
   // gather log dir from home dir .plog
   // append to current days log, creating if necessary
 }
