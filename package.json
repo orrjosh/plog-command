@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/orrjosh/plog-command#readme",
   "dependencies": {
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "home-config": "^0.1.0"
   }
 }
