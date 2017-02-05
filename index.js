@@ -21,6 +21,22 @@ function add(message, timestamp){
     timestamp = moment(new Date()).format('HHmm')
   }
   console.log('message:', message, " timestamp:", timestamp)
+  console.log('cfg.log_dir:', cfg.log_dir)
+  console.log(getLogDate())
   // gather log dir from home dir .plog
   // append to current days log, creating if necessary
 }
+
+function createOrOpenFile(){
+
+}
+
+function fileExists(){
+
+}
+
+function getLogDate(){
+  return moment(new Date()).format('YYYY-MM-DD')
+}
+
+exports.getLogDate = getLogDate

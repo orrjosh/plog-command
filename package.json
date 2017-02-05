@@ -4,7 +4,7 @@
   "description": "command for adding quick entries to personal log",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "tape 'test/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "commander": "^2.9.0",
     "home-config": "^0.1.0",
     "moment": "^2.17.1"
+  },
+  "devDependencies": {
+    "tape": "^4.6.3"
   }
 }
