@@ -1,6 +1,7 @@
 #!/usr/local/bin/node
 
 var cli = require('commander')
+var moment = require('moment')
 var cfg = require('home-config').load('.plog', {
     log_dir : '~/Documents/plog/'
 });
@@ -16,10 +17,10 @@ cli
   .parse(process.argv)
 
 function add(message, time){
-  console.log('message:', message)
   if(!time){
-    // set time to cur military time
+    time = moment(new Date()).format('HHmm')
   }
+  console.log('message:', message, " time:", time)
   // gather log dir from home dir .plog
   // append to current days log, creating if necessary
 }
