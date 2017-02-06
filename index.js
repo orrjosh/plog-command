@@ -2,6 +2,9 @@
 
 var cli = require('commander')
 var moment = require('moment')
+var fs = require('fs')
+var expandHomeDir = require('expand-home-dir')
+
 var cfg = require('home-config').load('.plog', {
     log_dir : '~/Documents/plog/'
 });
@@ -23,16 +26,22 @@ function add(message, timestamp){
   console.log('message:', message, " timestamp:", timestamp)
   console.log('cfg.log_dir:', cfg.log_dir)
   console.log(getLogDate())
-  // gather log dir from home dir .plog
-  // append to current days log, creating if necessary
+  writeToFile()
 }
 
-function createOrOpenFile(){
+function writeToFile(){
+  let path = cfg.log_dir + getLogDate()
+  console.log(path)
+  console.log(fileExists(path))
 
 }
 
-function fileExists(){
+function readFileAsYaml(path){
 
+}
+
+function fileExists(filePath){
+  return fs.existsSync(expandHomeDir(filePath))
 }
 
 function getLogDate(){
