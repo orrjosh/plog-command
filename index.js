@@ -3,6 +3,7 @@
 var cli = require('commander')
 var moment = require('moment')
 var fs = require('fs')
+var yaml = require('js-yaml');
 var expandHomeDir = require('expand-home-dir')
 
 var cfg = require('home-config').load('.plog', {
@@ -30,18 +31,23 @@ function add(message, timestamp){
 }
 
 function writeToFile(){
-  let path = cfg.log_dir + getLogDate()
+  let path = expandHomeDir(cfg.log_dir + getLogDate())
   console.log(path)
   console.log(fileExists(path))
 
 }
 
 function readFileAsYaml(path){
-
+  try {
+    return yaml.safeLoad(path)
+  } catch(e) {
+    console.error(e)
+    return
+  }
 }
 
 function fileExists(filePath){
-  return fs.existsSync(expandHomeDir(filePath))
+  return fs.existsSync(filePath)
 }
 
 function getLogDate(){
@@ -49,3 +55,4 @@ function getLogDate(){
 }
 
 exports.getLogDate = getLogDate
+exports.readFileAsYaml = readFileAsYaml

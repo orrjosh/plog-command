@@ -1,4 +1,6 @@
 var test = require('tape')
+var path = require('path')
+var fs = require('fs')
 var indexMethods = require('../index.js')
 
 test('getLogDate function returns correct format', (t) => {
@@ -10,4 +12,16 @@ test('getLogDate function returns correct format', (t) => {
     console.log(logDate)
     t.fail('date is not in the correct format')
   }
+})
+
+test('readFileAsYaml returns object from good yml file', (t) => {
+  t.plan(1)
+  let file = path.join(__dirname, 'fixtures', 'good.yml');
+  t.ok(typeof indexMethods.readFileAsYaml(fs.readFileSync(file)) === 'object')
+})
+
+test('readFileAsYaml returns undefined from bad yml file', (t) => {
+  t.plan(1)
+  let file = path.join(__dirname, 'fixtures', 'bad.yml');
+  t.ok(!indexMethods.readFileAsYaml(fs.readFileSync(file)))
 })
